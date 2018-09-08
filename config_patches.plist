@@ -6,43 +6,226 @@
 	<string>Common patches not specific to a graphics device</string>
 	<key>KernelAndKextPatches</key>
 	<dict>
-		<key>KernelToPatch</key>
-		<array>
-			<dict>
-				<key>Comment</key>
-				<string>Disable panic kext logging on 10.13 debug kernel (credit Vandroiy)</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				sABMi1Xw
-				</data>
-				<key>MatchOS</key>
-				<string>10.13.x</string>
-				<key>Replace</key>
-				<data>
-				SIPEQF3D
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Disable panic kext logging on 10.13 release kernel (credit Vandroiy)</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				igKEwHRE
-				</data>
-				<key>MatchOS</key>
-				<string>10.13.x</string>
-				<key>Replace</key>
-				<data>
-				igKEwOtE
-				</data>
-			</dict>
-		</array>
 		<key>KextsToPatch</key>
 		<array>
+			<dict>
+				<key>Comment</key>
+				<string>IONVMeFamily: Ignore FLBAS bit:4 being set - for Plextor/LiteOn/Hynix (credit Pene)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				ikga9sEQ
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.iokit.IONVMeFamily</string>
+				<key>Replace</key>
+				<data>
+				ikga9sEA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>IONVMeFamily Preferred Block Size 0x10 -&gt; 0x01 (c) Pike R. Alpha </string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				9sEQD4UcAQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.12.x</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IONVMeFamily</string>
+				<key>Replace</key>
+				<data>
+				9sEBD4UcAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>IONVMeFamily Preferred Block Size 0x10 -&gt; 0x02 (c) Pike R. Alpha </string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				9sEQD4UcAQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.12.x</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IONVMeFamily</string>
+				<key>Replace</key>
+				<data>
+				9sECD4UcAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>IONVMeFamily Preferred Block Size 0x10 -&gt; 0x04 (c) Pike R. Alpha </string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				9sEQD4UcAQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.12.x</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IONVMeFamily</string>
+				<key>Replace</key>
+				<data>
+				9sEED4UcAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>IONVMeFamily Preferred Block Size 0x10 -&gt; 0x08 (c) Pike R. Alpha </string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				9sEQD4UcAQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.12.x</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IONVMeFamily</string>
+				<key>Replace</key>
+				<data>
+				9sEID4UcAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>IONVMeFamily Preferred Block Size 0x10 -&gt; 0x01, credit RehabMan based on 10.12 patch (c) Pike R. Alpha </string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				9sEQD4VBAQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.13.x</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IONVMeFamily</string>
+				<key>Replace</key>
+				<data>
+				9sEBD4VBAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>IONVMeFamily Preferred Block Size 0x10 -&gt; 0x02, credit RehabMan based on 10.12 patch, (c) Pike R. Alpha </string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				9sEQD4VBAQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.13.x</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IONVMeFamily</string>
+				<key>Replace</key>
+				<data>
+				9sECD4VBAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>IONVMeFamily Preferred Block Size 0x10 -&gt; 0x04, credit RehabMan based on 10.12 patch (c) Pike R. Alpha </string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				9sEQD4VBAQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.13.x</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IONVMeFamily</string>
+				<key>Replace</key>
+				<data>
+				9sEED4VBAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>IONVMeFamily Preferred Block Size 0x10 -&gt; 0x08, credit RehabMan based on 10.12 patch (c) Pike R. Alpha </string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				9sEQD4VBAQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.13.x</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IONVMeFamily</string>
+				<key>Replace</key>
+				<data>
+				9sEID4VBAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>IONVMeFamily Pike R. Alpha PM981 patch by DalianSky</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				9sEQD4VBAQA=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.13.x,10.14</string>
+				<key>Name</key>
+				<string>IONVMeFamily</string>
+				<key>Replace</key>
+				<data>
+				9sEBD4VBAQA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>IONVMeFamily Pike R. Alpha Hynix SSD patch by DalianSky</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				9sEQD4VBAQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.13.x,10.14</string>
+				<key>Name</key>
+				<string>IONVMeFamily</string>
+				<key>Replace</key>
+				<data>
+				9sECD4VBAQAA
+				</data>
+			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>Enable TRIM for SSD</string>
@@ -620,10 +803,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>change 15 port limit to 26 in XHCI kext</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				g72M/v//EA==
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.11.x</string>
 				<key>Name</key>
@@ -636,10 +823,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>change 15 port limit to 26 in XHCI kext</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				g710////EA==
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.12.x</string>
 				<key>Name</key>
@@ -652,10 +843,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>change 15 port limit to 26 in XHCI kext</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				g32MEA==
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.13.0,10.13.1,10.13.2,10.13.3</string>
 				<key>Name</key>
@@ -668,12 +863,16 @@
 			<dict>
 				<key>Comment</key>
 				<string>disable port limit in XHCI kext (credit PMHeart)</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				g32UDw+DlwQAAA==
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
-				<string>10.13.4</string>
+				<string>10.13.4,10.13.5</string>
 				<key>Name</key>
 				<string>com.apple.driver.usb.AppleUSBXHCI</string>
 				<key>Replace</key>
@@ -684,12 +883,16 @@
 			<dict>
 				<key>Comment</key>
 				<string>change 15 port limit to 26 in XHCI kext (credit FredWst)</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				g32UDw+DlwQ=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
-				<string>10.13.4</string>
+				<string>10.13.4,10.13.5</string>
 				<key>Name</key>
 				<string>com.apple.driver.usb.AppleUSBXHCI</string>
 				<key>Replace</key>
@@ -706,6 +909,8 @@
 				<data>
 				9oDUAAAAgHU6
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.9.x</string>
 				<key>Name</key>
@@ -724,6 +929,8 @@
 				<data>
 				9oDUAAAAgHU0
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.10.x</string>
 				<key>Name</key>
@@ -742,6 +949,8 @@
 				<data>
 				Zj0AAQ==
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.9.x</string>
 				<key>Name</key>
@@ -760,6 +969,8 @@
 				<data>
 				QbzHAgDgPQABAAA=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.10.x</string>
 				<key>Name</key>
@@ -778,6 +989,8 @@
 				<data>
 				QcdHCAAAQAA=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.9.x,10.10.x</string>
 				<key>Name</key>
@@ -796,6 +1009,8 @@
 				<data>
 				gUkIAABAAA==
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.9.x,10.10.x</string>
 				<key>Name</key>
@@ -814,6 +1029,8 @@
 				<data>
 				xoDIAAAAAQ==
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.9.x,10.10.x</string>
 				<key>Name</key>
@@ -832,6 +1049,8 @@
 				<data>
 				dU1Ii7voAQAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.9.x,10.10.x</string>
 				<key>Name</key>
@@ -844,10 +1063,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>Enable TRIM for SSD</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				AEFQUExFIFNTRAA=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.iokit.IOAHCIBlockStorage</string>
 				<key>Replace</key>
@@ -858,10 +1081,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>Boot graphics glitch, 10.10.x/10.11.x (credit lisai9093, cecekpawon)</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				AQAAdRc=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.10.x,10.11.x</string>
 				<key>Name</key>
@@ -874,10 +1101,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>Boot graphics glitch, 10.12.dp1 (credit denskop)</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				AQAAdSU=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.12.x</string>
 				<key>Name</key>
@@ -890,10 +1121,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>AirPortBrcm4360 whitelist patch (board-id), 10.10.5, credit RehabMan</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				MdtJiwQkSDtF2HUS
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.10.5</string>
 				<key>Name</key>
@@ -906,10 +1141,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>AirPortBrcm4360 whitelist patch (board-id), 10.11.x, credit RehabMan</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				MdtMO2XYdRI=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.11.x</string>
 				<key>Name</key>
@@ -922,10 +1161,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>AirPortBrcm4360 whitelist patch (board-id), 10.12.dp1, credit RehabMan</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				MdtMO33YdRI=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.12.x</string>
 				<key>Name</key>
@@ -938,10 +1181,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>10.9.5 5Ghz US FCC, svko</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				WFQAIBcnIAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.9.5</string>
 				<key>Name</key>
@@ -954,10 +1201,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>10.10.2+ 5Ghz US FCC, the-darkvoid</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				QYP8/3QsSA==
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.10.x,10.11.x,10.12.x</string>
 				<key>Name</key>
@@ -970,10 +1221,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>AirPortBrcm4360 - fcvo, 10.12.x (credit the-darkvoid)</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				gflSqgAAdSk=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.12.x</string>
 				<key>Name</key>
@@ -986,10 +1241,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>10.10.2+ BT4LE-Handoff-Hotspot, Dokterdok</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				SIXAdFwPt0g=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.10.x</string>
 				<key>Name</key>
@@ -1002,10 +1261,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>10.11.dp1+ BT4LE-Handoff-Hotspot, credit RehabMan based on Dokterdok original</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				SIX/dEdIiwc=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.11.x,10.12.x</string>
 				<key>Name</key>
@@ -1018,10 +1281,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>HDMI-audio HD3000, 0x00010000, port 0205</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				AgUAAAAEAAAHAAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelSNBGraphicsFB</string>
 				<key>Replace</key>
@@ -1032,10 +1299,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>HDMI-audio HD3000, 0x00010000, port 0304</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				AwQAAAAEAAAJAAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelSNBGraphicsFB</string>
 				<key>Replace</key>
@@ -1046,10 +1317,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>HDMI-audio HD3000, 0x00010000, port 0406</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				BAYAAAAEAAAJAAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelSNBGraphicsFB</string>
 				<key>Replace</key>
@@ -1067,6 +1342,8 @@
 				AQIEABAHAAAQBwAABQMAAAIAAAAwAAAAAgUAAAAEAAAH
 				AAAAAwQAAAAEAAAJAAAABAYAAAAEAAAJAAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelSNBGraphicsFB</string>
 				<key>Replace</key>
@@ -1078,10 +1355,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>HDMI-video, 64MB BIOS, HD4000 0x01660004 #1 of 2</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				BABmAQEDAQEAAAAC
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferCapri</string>
 				<key>Replace</key>
@@ -1092,11 +1373,15 @@
 			<dict>
 				<key>Comment</key>
 				<string>HDMI-video, 64MB BIOS, HD4000 0x01660004 #2 of 2</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				MAIAAAAAAAABAAAAQAAAAAAAAAABAAAAQAAAAAAAAAAB
 				AAAAQAAAAAAAAAAAAAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferCapri</string>
 				<key>Replace</key>
@@ -1108,10 +1393,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>HDMI-audio HD4000 0x01660003, port 0205</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				AgUAAAAEAAAHBAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferCapri</string>
 				<key>Replace</key>
@@ -1122,10 +1411,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>HDMI-audio HD4000 0x01660003, port 0304</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				AwQAAAAEAACBAAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferCapri</string>
 				<key>Replace</key>
@@ -1136,10 +1429,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>HDMI-audio HD4000 0x01660003, port 0406</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				BAYAAAAEAACBAAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferCapri</string>
 				<key>Replace</key>
@@ -1150,10 +1447,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>Enable 9MB cursor bytes, 0x0a260006</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				BgAmCgEDAwMAAAACAAAwAQAAYAA=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
@@ -1170,6 +1471,8 @@
 				<data>
 				CAAuCgEDAwMAAAAE
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
@@ -1186,6 +1489,8 @@
 				<data>
 				CAAuCgEDAwMAAAAE
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
@@ -1202,6 +1507,8 @@
 				<data>
 				BgAmCgEDAwMAAAACAAAwAQAAYAA=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
@@ -1218,6 +1525,8 @@
 				<data>
 				AQUJAAAEAACHAAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
@@ -1234,6 +1543,8 @@
 				<data>
 				AgQJAAAEAACHAAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
@@ -1250,6 +1561,8 @@
 				<data>
 				AQUJAAAEAAAHAQAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
@@ -1266,6 +1579,8 @@
 				<data>
 				AgQJAAAEAAAHAQAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
@@ -1282,6 +1597,8 @@
 				<data>
 				AQAAAEAAAADWAAAABQUAAA==
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
@@ -1298,6 +1615,8 @@
 				<data>
 				AQUJAAAEAACHAAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
@@ -1314,6 +1633,8 @@
 				<data>
 				AgQJAAAEAACHAAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
@@ -1330,6 +1651,8 @@
 				<data>
 				AQUJAAAEAAAHAQAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
@@ -1346,6 +1669,8 @@
 				<data>
 				AgQJAAAEAAAHAQAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
@@ -1362,6 +1687,8 @@
 				<data>
 				AQUJAAQAAAAEAAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelBDWGraphicsFramebuffer</string>
 				<key>Replace</key>
@@ -1378,6 +1705,8 @@
 				<data>
 				AgQJAAAIAACCAAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelBDWGraphicsFramebuffer</string>
 				<key>Replace</key>
@@ -1394,6 +1723,8 @@
 				<data>
 				AQUJAAAEAAABEAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelBDWGraphicsFramebuffer</string>
 				<key>Replace</key>
@@ -1410,6 +1741,8 @@
 				<data>
 				AQUJAAAEAAAHBQAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelBDWGraphicsFramebuffer</string>
 				<key>Replace</key>
@@ -1426,6 +1759,8 @@
 				<data>
 				AgQJAAAEAAAHBQAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelBDWGraphicsFramebuffer</string>
 				<key>Replace</key>
@@ -1442,6 +1777,8 @@
 				<data>
 				AQULAAAEAAAHBQAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelBDWGraphicsFramebuffer</string>
 				<key>Replace</key>
@@ -1458,6 +1795,8 @@
 				<data>
 				AgQLAAAEAAAHBQAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelBDWGraphicsFramebuffer</string>
 				<key>Replace</key>
@@ -1474,6 +1813,8 @@
 				<data>
 				AwYIAAAEAAARAAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelBDWGraphicsFramebuffer</string>
 				<key>Replace</key>
@@ -1490,6 +1831,8 @@
 				<data>
 				RiV1VCUwNHgA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleBacklight</string>
 				<key>Replace</key>
@@ -1515,7 +1858,438 @@
 				AQMDAwAAAAIAADABAABQAAAAAIA=
 				</data>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>VRAM 1536MB -&gt; 2048MB, ig-platform-id: 0x59160000 (credit DalianSky)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AAAAYGwFAABsBQAAAAAAAA==
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AAAAgGwFAABsBQAAAAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				SU9LaXQ=
+				</data>
+				<key>InfoPlistPatch</key>
+				<true/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelLpssI2C</string>
+				<key>Replace</key>
+				<data>
+				SU9LaXM=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				SU9LaXQ=
+				</data>
+				<key>InfoPlistPatch</key>
+				<true/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelLpssI2CController</string>
+				<key>Replace</key>
+				<data>
+				SU9LaXM=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>VRAM 1024 -&gt; 2048 for 0x0a160000</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AAAAQNkKAADZCgAAAAAAAA==
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>AppleIntelFramebufferAzul</string>
+				<key>Replace</key>
+				<data>
+				AAAAgNkKAADZCgAAAAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>change 15 port limit to 26 in XHCI kext for 10.13.6</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				g32IDw+DpwQ=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.13.6</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				g32IGg+DpwQ=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>disable USB Port Limit Patch (PMheart)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				g32IDw+DpwQAAA==
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.13.6</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				g32ID5CQkJCQkA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>disable USB Port Limit Patch (PMheart)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				g/sPD4MJBQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.14 beta1</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				g/sPkJCQkJCQ
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>change 15 port limit to 26 in XHCI kext for 10.14 beta1</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				g/sPD4MJBQA=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.14 beta1</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				g/saD4MJBQA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>change 15 port limit to 26 in XHCI kext for 10.14 beta2</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				g/sPD4MDBQA=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.14 beta2,beta3,beta4</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				g/saD4MDBQA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>disable USB Port Limit Patch (PMheart) for 10.14 beta2</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				g/sPD4MDBQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.14 beta2,beta3,beta4</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				g/sPkJCQkJCQ
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>DVMT for AppleIntelBDWGraphicsFramebuffer (Credits Ricky) for 10.14 beta2</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				dkBI/wUSKwY=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.14 beta2</string>
+				<key>Name</key>
+				<string>AppleIntelBDWGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				60BI/wUSKwY=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>DVMT for AppleIntelSKLGraphicsFramebuffer﻿ (Credits Ricky) for 10.14 beta2</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				dkBI/wVh6Qc=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.14 beta2</string>
+				<key>Name</key>
+				<string>AppleIntelSKLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				60BI/wVh6Qc=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>DVMT for AppleIntelKBLGraphicsFramebuffer﻿ (Credits Ricky) for 10.14 beta2</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				dkZI/wUCUgg=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.14 beta2</string>
+				<key>Name</key>
+				<string>AppleIntelKBLGraph﻿icsFramebuffer﻿﻿﻿</string>
+				<key>Replace</key>
+				<data>
+				60ZI/wUCUgg=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>DVMT for AppleIntelBDWGraphicsFramebuffer (Credits Ricky) for 10.14 beta3</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				dkBI/wVCKwY=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.14 beta3</string>
+				<key>Name</key>
+				<string>AppleIntelBDWGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				60BI/wVCKwY=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>DVMT for AppleIntelSKLGraphicsFramebuffer﻿ (Credits Ricky) for 10.14 beta3</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				dkBI/wXx6Qc=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.14 beta3</string>
+				<key>Name</key>
+				<string>AppleIntelSKLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				60BI/wXx6Qc=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>DVMT for AppleIntelKBLGraphicsFramebuffer﻿ (Credits Ricky) for 10.14 beta3</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				dkZI/wUiVQg=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.14 beta3</string>
+				<key>Name</key>
+				<string>AppleIntelKBLGraph﻿icsFramebuffer﻿﻿﻿</string>
+				<key>Replace</key>
+				<data>
+				60ZI/wUiVQg=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>DVMT for AppleIntelCFLGraphicsFramebuffer﻿ (Credits DalianSky) for 10.14 beta10</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				dkBI/wVi9Ac=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.14.x</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelCFLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				60BI/wVi9Ac=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>VRAM patch for 3ea50009 3e920009 3e9b0009 3ea50000 3e920000 3e000000 3e9b0000 3ea50004</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AQMDAwAAkAMAAAAAAAAAYA==
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelCFLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AQMDAwAAkAMAAAAAAAAAgA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>VRAM patch for 3e9b0006</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AQEBAQAAYAIAAAAAAAAAYA==
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelCFLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AQEBAQAAYAIAAAAAAAAAgA==
+				</data>
+			</dict>
 		</array>
 	</dict>
+	<key>KernelToPatch</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string>Disable panic kext logging on 10.13 Debug kernel</string>
+			<key>Disabled</key>
+			<false/>
+			<key>Find</key>
+			<data>
+			sABMi1Xw
+			</data>
+			<key>Replace</key>
+			<data>
+			SIPEQF3D
+			</data>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Disable panic kext logging on 10.13 Release kernel</string>
+			<key>Disabled</key>
+			<false/>
+			<key>Find</key>
+			<data>
+			igKEwHRE
+			</data>
+			<key>Replace</key>
+			<data>
+			igKEwOtE
+			</data>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Disable panic kext logging on 10.13 debug kernel (credit Vandroiy)</string>
+			<key>Disabled</key>
+			<false/>
+			<key>Find</key>
+			<data>
+			sABMi1Xw
+			</data>
+			<key>MatchOS</key>
+			<string>10.13.x</string>
+			<key>Replace</key>
+			<data>
+			SIPEQF3D
+			</data>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Disable panic kext logging on 10.13 release kernel (credit Vandroiy)</string>
+			<key>Disabled</key>
+			<false/>
+			<key>Find</key>
+			<data>
+			igKEwHRE
+			</data>
+			<key>MatchOS</key>
+			<string>10.13.x</string>
+			<key>Replace</key>
+			<data>
+			igKEwOtE
+			</data>
+		</dict>
+	</array>
 </dict>
 </plist>
